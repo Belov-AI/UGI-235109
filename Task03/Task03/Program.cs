@@ -10,7 +10,7 @@ namespace Task03
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Вваедите двузначное число");
+            Console.WriteLine("Введите двузначное число");
             var number = int.Parse(Console.ReadLine());
 
             var units = number % 10;
