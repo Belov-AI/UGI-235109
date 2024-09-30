@@ -25,7 +25,7 @@ namespace task02
             double y = x / Math.Cos(alpha);
             double p = 2 * y + a + b;
 
-            Console.WriteLine("Площадь траппеции: " + Math.Round(s, 3));
+            Console.WriteLine("Площадь трапеции: " + Math.Round(s, 3));
             Console.WriteLine("Периметр трапеции: " + Math.Round(p, 3));
 
             Console.ReadKey();
