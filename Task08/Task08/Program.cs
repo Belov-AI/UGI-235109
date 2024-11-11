@@ -13,23 +13,19 @@ namespace Task08
             Console.WriteLine("Введите значение аргумента функции");
             var x = double.Parse(Console.ReadLine());
 
-            Console.WriteLine($"f({x} = {MyFunction(x)}");
+            Console.WriteLine($"f({x}) = {MyFunction(x)}");
 
             Console.ReadKey();
         }
 
         static double MyFunction(double x)
         {
-            double result;
-
             if (x < -1)
-                result = Math.Atan(x);
+                return Math.Atan(x);
             else if (x > 1)
-                result = 1 / x;
-            else
-                result = Math.Acos(x);
+                return 1 / x;
             
-            return result;
+            return Math.Acos(x);
         }
     }
 }
