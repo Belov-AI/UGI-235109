@@ -11,22 +11,52 @@ namespace Errors
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите числитель");
-            var numerator = int.Parse(Console.ReadLine());
+            int numerator, denominator;
 
-            Console.WriteLine("Введите знаменатель");
-            var denominator = int.Parse(Console.ReadLine());
+            if (!InputNumber("Введите числитель", out numerator))
+                return;
 
-            Console.WriteLine($"{numerator} / {denominator} = {GetQuotient(denominator, denominator)}");
+            if (!InputNumber("Введите знаменатель", out denominator))
+                return;
+
+            Console.WriteLine($"{numerator} / {denominator} = " +
+                $"{GetQuotient(numerator, denominator)}");
 
             Console.ReadKey();
+        }
+
+        static bool InputNumber(string message, out int number)
+        {
+            while (true)
+            {
+                string input;
+                number = 0;
+
+
+                Console.WriteLine(message + " (Enter - отказ от ввода)");
+                input = Console.ReadLine();
+
+                if (input == "")
+                    return false;
+
+                if (!int.TryParse(input, out number))
+                {
+                    Console.WriteLine("Ошибка ввода");
+                    continue;
+                }
+                else
+                    break;
+
+            }
+
+            return true;
         }
 
         static double GetQuotient(int x, int y)
         {
             try
             {
-                return x / y;
+                return (double)x / y;
             }
             catch 
             {
